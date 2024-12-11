@@ -40,7 +40,7 @@ filenames.forEach(fn => {
         );
 
         utils.printProgress(id, filenames.length*8);
-        
+
         id++
     }
 });
@@ -48,6 +48,11 @@ filenames.forEach(fn => {
 fs.writeFileSync(
     constants.SAMPLES,
     JSON.stringify(samples)
+);
+
+fs.writeFileSync(
+    constants.SAMPLES_JS,
+    "const samples = " + JSON.stringify(samples) + ";"
 );
 
 
